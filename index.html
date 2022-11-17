@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html >
+<body>
+    <div id="root"></div>
+</body>
+<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+    function Btn({banana, big}){ //Btn(props) 대신에 저런식으로 사용
+        console.log(banana, big)
+        return <button style={{
+            backgroundColor: "tomato",
+            color: "white",
+            padding: "10px 20px",
+            border: 0,
+            borderRadius: 10,
+            fontSize: big? 18 : 10
+        }}>{banana}</button>;
+    }
+    function App(){
+
+        return(
+        <div>
+            <Btn banana="Save Changes" big={true} />
+            <Btn banana="Continue" big={false} />
+        </div>
+        );
+    };
+    const root = document.getElementById("root");
+    ReactDOM.render(<App />, root);
+</script>
+
+</html>
